@@ -33,7 +33,6 @@ script_memory = ConversationBufferMemory(input_key = 'title', memory_key = 'chat
 llm = OpenAI(temperature = .9)
 title_chain = LLMChain(llm = llm, prompt = title_template, verbose = True, output_key = 'title', memory = title_memory)
 script_chain = LLMChain(llm = llm, prompt = script_template, verbose = True, output_key = "script", memory = script_memory)
-#chain = SequentialChain(chains = [title_chain, script_chain], input_variables = ["topic"], output_variables = ['title', 'script'], verbose = True)
 
 wiki = WikipediaAPIWrapper()
 
